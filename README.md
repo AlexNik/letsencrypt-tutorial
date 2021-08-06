@@ -19,3 +19,8 @@
 Добавим в папку `simple-server` Dockerfile. Соберём `docker build -t simple-server simple-server`.  
 Запустим `docker run -d --name simple-server -p 8000:8000 simple-server`, проверим в браузере по локальному адресу `http://127.0.0.1:8000`. Видим то же сообщение `Hello!`.
 Удалим запущенный контейнер `docker rm -f simple-server`.
+
+## Шаг 3: Добавим nginx
+Сделаем конфиг nginx по пути `production/data/nginx.conf` и docker-compose файл по пути `production/docker-compose.yml`.
+Перейдём в папку `production` и запустим контейнеры `docker-compose up -d`, проверим в браузере по локальному адресу на 80 порту `http://127.0.0.1`.  
+Отлично, у нас есть всё необходимое для перевода нашего приложение на работу по HTTPS.
