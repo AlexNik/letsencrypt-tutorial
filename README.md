@@ -14,3 +14,8 @@
 В папке `simple-server` лежит файл с простым веб приложением, которое поднимается на 8000 порту.  
 Запустим `python3 simple-server/main.py` и зайдём в браузере по локальному адресу `http://127.0.0.1:8000`. Должно отобразиться сообщение `Hello!`.  
 Или через curl: `curl http://127.0.0.1:8000`
+
+## Шаг 2: Упаковываем приложение в Docker
+Добавим в папку `simple-server` Dockerfile. Соберём `docker build -t simple-server simple-server`.  
+Запустим `docker run -d --name simple-server -p 8000:8000 simple-server`, проверим в браузере по локальному адресу `http://127.0.0.1:8000`. Видим то же сообщение `Hello!`.
+Удалим запущенный контейнер `docker rm -f simple-server`.
