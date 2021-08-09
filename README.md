@@ -40,3 +40,6 @@
 Обратите внимание, что в конфиге nginx обязательно надо добавить `server_name`. Не забудьте поменять все заглушки `<URL>` на верное DNS имя.  
 Запускаем `docker-compose up -d`. Заходим в браузере по DNS имени и настраиваем TeamCity.
 
+## Шаг 7: Добавляем агента
+Добавить агента, который находится "в любой точке мира": `docker run -dt -e SERVER_URL="https://<URL>" --name teamcity-agent-instance jetbrains/teamcity-agent:2021.1`
+
