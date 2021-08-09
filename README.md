@@ -43,3 +43,6 @@
 ## Шаг 7: Добавляем агента
 Добавить агента, который находится "в любой точке мира": `docker run -dt -e SERVER_URL="https://<URL>" --name teamcity-agent-instance jetbrains/teamcity-agent:2021.1`
 
+## Шаг 8: Агент в локальной сети предприятия
+Допустим, у нас есть защищённая сеть предприятия, в которой находятся сервер TemCity и агент. У агента нет выхода в интернет, но мы хотим на нём собирать билды.  
+Тогда немного видоизменяем конфиг nginx и команду запуска агента: `docker run -dt -e SERVER_URL="http://<LOCAL_IP>" --name teamcity-agent-instance jetbrains/teamcity-agent:2021.1`
